@@ -1,1 +1,14 @@
-/* Add CSS code here */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+body {
+    background-color: #d6ebff;
+    font-family: "Onest", sans-serif;
+    color: #141b21;
+    font-size: 13px;
+}
+
+h1 {
+    font-family: "Onest", sans-serif;
+    color: #548ec4;
+    font-weight: 800;
+}
