@@ -13,9 +13,9 @@ h1 {
     font-weight: 800;
 }
 
-a {
-    border: #548ec4;
-    border-radius: 10%;
-    background-color: #548ec4;
-    color: black;
+.container {
+    align-items: center;
+    text-align: center;
+    width: 50%
+    
 }
