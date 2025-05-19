@@ -5,27 +5,51 @@
   <link rel="stylesheet" href="/style/style.css">
   <meta charset="UTF-8">
   <title>Jake's Portfolio</title>
+  <base href="/"> <!-- This helps with relative URL resolution -->
+  <script>
+    // AJAX function to load content from the /pages/ directory
+    function loadContent(page) {
+      const xhr = new XMLHttpRequest();
+      xhr.onload = function() {
+        if (this.readyState === 4 && this.status === 200) {
+          document.getElementById('content').innerHTML = this.responseText;
+        } else {
+          // Handle errors or missing content
+          document.getElementById('content').innerHTML = `
+            <p>Error loading content. Please check the URL.</p>
+          `;
+        }
+      };
+      // Update the path to point to your /pages/ directory
+      xhr.open('GET', `/pages/${page}.html`, true);
+      xhr.send();
+    }
+
+    // Load default content when the page loads
+    window.onload = function() {
+      loadContent('about');
+    }
+  </script>
 </head>
 
 <body>
   <div class="header">
-    <!--remember to configure header class in style.css-->
     <h1>Header</h1>
     <h3>Subheading for site description</h3>
   </div>
   
   <div class="navbar">
-    <!--remember to configure navbar class in style.css-->
     <ul>
-      <li><a>About</a></li>
-      <li><a>Graphic Design</a></li>
-      <li><a>Photoshop Projects</a></li>
-      <li><a>Videos</a></li>
-      <li><a>Web Development</a></li>
+      <li><a onclick="loadContent('about')">About</a></li>
+      <li><a onclick="loadContent('graphics')">Graphic Design</a></li>
+      <li><a onclick="loadContent('photoshop')">Photoshop Projects</a></li>
+      <li><a onclick="loadContent('videos')">Videos</a></li>
+      <li><a onclick="loadContent('webdesign')">Web Development</a></li>
     </ul>
   </div>
   
-  <div class="content">
-    <!--insert js embeds here i think-->
+  <div class="content" id="content">
+    <!-- Content will be loaded here -->
   </div>
 </body>
+</html>
