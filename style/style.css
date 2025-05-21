@@ -26,7 +26,7 @@ a:hover {
 
 .main {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   max-width: 1000px;
   width: 100%;
   margin-top: 20px;
@@ -37,11 +37,16 @@ a:hover {
   width: 250px;
   background-color: #c3dff9;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
 }
 
 .content {
   flex: 1;
   padding: 20px;
+  margin-left: 250px; /* Add margin to prevent content from being hidden behind navbar */
 }
 
 #content {
