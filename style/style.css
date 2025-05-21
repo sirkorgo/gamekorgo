@@ -8,11 +8,10 @@ body {
 }
 
 header {
+    font-family: "Space Grotesk", sans-serif;
+  color: #141b21;
   width: 100%;
   max-width: 1000px;
-  font-family: "Space Grotesk", sans-serif;
-  color: #141b21;
-  font-size: 13px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
