@@ -20,6 +20,10 @@ header {
   align-items: flex-start; /* left-align header content */
 }
 
+a:hover {
+  color: #9ccdfc
+}
+
 .main {
   display: flex;
   flex-direction: row-reverse;

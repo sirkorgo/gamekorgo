@@ -6,6 +6,12 @@
   <meta charset="UTF-8">
   <title>Jake's Portfolio</title>
   <base href="/"> <!-- This helps with relative URL resolution -->
+  <style>
+    /* Add this CSS for active link styling */
+    .active {
+      font-weight: bold;
+    }
+  </style>
   <script>
     // AJAX function to load content from the /pages/ directory
     function loadContent(page) {
@@ -13,6 +19,13 @@
       xhr.onload = function() {
         if (this.readyState === 4 && this.status === 200) {
           document.getElementById('content').innerHTML = this.responseText;
+          
+          // Remove active class from all links
+          const links = document.querySelectorAll('.navbar a');
+          links.forEach(link => link.classList.remove('active'));
+          
+          // Add active class to current page link
+          document.getElementById(page).classList.add('active');
         } else {
           // Handle errors or missing content
           document.getElementById('content').innerHTML = `
@@ -28,6 +41,8 @@
     // Load default content when the page loads
     window.onload = function() {
       loadContent('about');
+      // Set initial active state for the default page
+      document.getElementById('about').classList.add('active');
     }
   </script>
 </head>
@@ -44,15 +59,15 @@
 
   <div class="main">
     <div class="navbar">
-        <a onclick="loadContent('about')">About</a>
+        <a id="about" onclick="loadContent('about')">About</a>
         <br>
-        <a onclick="loadContent('graphics')">Graphic Design</a>
+        <a id="graphics" onclick="loadContent('graphics')">Graphic Design</a>
         <br>
-        <a onclick="loadContent('photoshop')">Photoshop Projects</a>
+        <a id="photoshop" onclick="loadContent('photoshop')">Photoshop Projects</a>
         <br>
-        <a onclick="loadContent('videos')">Videos</a>
+        <a id="videos" onclick="loadContent('videos')">Videos</a>
         <br>
-        <a onclick="loadContent('webdesign')">Web Development</a>
+        <a id="webdesign" onclick="loadContent('webdesign')">Web Development</a>
         <br>
     </div>
   
