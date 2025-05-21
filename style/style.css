@@ -8,7 +8,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 header {
@@ -39,7 +38,6 @@ header {
   flex: 1;
   padding: 20px;
   display: flex;
-  justify-content: center;
 }
 
 #content {
