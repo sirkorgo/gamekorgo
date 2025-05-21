@@ -1,45 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 body {
-    background-color: #d6ebff;
-    font-family: "Space Grotesk", sans-serif;
-    color: #141b21;
-    font-size: 13px;
-    margin: 0;
+  background-color: #d6ebff;
+  font-family: "Space Grotesk", sans-serif;
+  color: #141b21;
+  font-size: 13px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1 {
-    font-family: "Space Grotesk", sans-serif;
-    color: #548ec4;
-    font-weight: 800;
-    padding: 20px;
-    margin: 0;
-}
-
-/* Top heading */
 header {
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1000px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Container for navbar + content */
 .main {
-    display: flex;
-    flex-direction: row-reverse;
-    height: calc(100vh - 60px); /* adjust based on header height */
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: #fff;
 }
 
-/* Navbar on the right */
 .navbar {
-    width: 250px; /* or any fixed width */
-    background-color: #c3dff9;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+  width: 250px;
+  background-color: #c3dff9;
+  padding: 20px;
 }
 
-/* Content on the left */
 .content {
-    flex: 1;
-    padding: 20px;
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
+
+#content {
+  max-width: 700px;
+  width: 100%;
+}
+
