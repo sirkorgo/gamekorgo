@@ -5,18 +5,41 @@ body {
     font-family: "Space Grotesk", sans-serif;
     color: #141b21;
     font-size: 13px;
+    margin: 0;
 }
 
 h1 {
     font-family: "Space Grotesk", sans-serif;
     color: #548ec4;
     font-weight: 800;
+    padding: 20px;
+    margin: 0;
 }
 
+/* Top heading */
+header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Container for navbar + content */
+.main {
+    display: flex;
+    flex-direction: row-reverse;
+    height: calc(100vh - 60px); /* adjust based on header height */
+}
+
+/* Navbar on the right */
 .navbar {
-    align-items: right;
-    display: right;
-    text-align: left;
-    width: 50%
-    
+    width: 250px; /* or any fixed width */
+    background-color: #c3dff9;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+}
+
+/* Content on the left */
+.content {
+    flex: 1;
+    padding: 20px;
 }
