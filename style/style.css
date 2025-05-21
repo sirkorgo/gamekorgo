@@ -13,9 +13,10 @@ h1 {
     font-weight: 800;
 }
 
-.container {
-    align-items: center;
-    text-align: center;
+.navbar {
+    align-items: right;
+    display: right;
+    text-align: left;
     width: 50%
     
 }
