@@ -34,6 +34,7 @@ a:hover {
 }
 
 .main {
+  border-radius: 5%;
   display: flex;
   flex-direction: row-reverse;
   max-width: 1000px;
@@ -53,7 +54,6 @@ a:hover {
 }
 
 .content {
-  border-radius: 5%;
   font-family: "Space Grotesk", sans-serif;
   color: #141b21;
   font-size: 13px;
