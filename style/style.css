@@ -43,6 +43,7 @@ a:hover {
 }
 
 .navbar {
+  border-radius: 5%;
   font-family: "Space Grotesk", sans-serif;
   color: #141b21;
   font-size: 20px;
@@ -52,6 +53,7 @@ a:hover {
 }
 
 .content {
+  border-radius: 5%;
   font-family: "Space Grotesk", sans-serif;
   color: #141b21;
   font-size: 13px;
