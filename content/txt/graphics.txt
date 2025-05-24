@@ -14,7 +14,7 @@
     <!--remember to configure header class in style.css-->
     <h1>Graphic Design Projects</h1>
     <h3>A collection of graphic design projects made by me.</h3>
-    <small>DISCLAIMER: All trademarked creations &#40;such as the Star Magazine logo and &#41; belong to their owners.</small>
+    <small>DISCLAIMER: All trademarked creations &#40;such as the Star Magazine logo and&#41; belong to their owners.</small>
   </div>
   
   <div class="content">

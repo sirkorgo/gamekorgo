@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 body {
-  background-color: #d6ebff;
+  background: url(/style/bg.png) 0% 0% / 300px 300px repeat;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -9,56 +9,65 @@ body {
 
 h1 {
   font-family: "Space Grotesk", sans-serif;
-  color: #141b21;
+  color: #ffffff;
+  font-size: 25;
 }
 
 h3 {
   font-family: "Space Grotesk", sans-serif;
-  color: #141b21;
+  color: #ffffff;
+  font-size: 20px;
 }
 
-header {
+a {
   font-family: "Space Grotesk", sans-serif;
-  color: #141b21;
-  width: 100%;
-  max-width: 1000px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* left-align header content */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 a:hover {
-  color: #242424
+  color: #9094ff
+}
+
+p {
+  font-family: "Space Grotesk", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+small {
+  font-family: "Space Grotesk", sans-serif;
+  color: #ffffff;
+  font-size: 15px;
 }
 
 .main {
   border-radius: 5px;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-start;
   max-width: 1000px;
   width: 100%;
   margin-top: 20px;
-  background: #fff;
 }
 
 .navbar {
-  border-radius: 5px;
+  border-radius: 20px 0px 0px 20px;
+  background: #292F50;
   font-family: "Space Grotesk", sans-serif;
-  color: #141b21;
-  font-size: 20px;
+  color: #ffffff;
   width: 250px;
-  background-color: #c3dff9;
   padding: 20px;
 }
 
 .content {
   font-family: "Space Grotesk", sans-serif;
-  color: #141b21;
+  color: #ffffff;
   font-size: 13px;
   flex: 1;
   padding: 20px;
+  border-radius: 0px 20px 20px 0px;
+  background: #1C2141;
 }
 
 #content {
