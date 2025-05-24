@@ -39,6 +39,5 @@
     <br>
     <h2>Group Photo Restoration</h2>
     <h3>The objective of this assignment was to remove a group of people from the image, leaving just the background. This project was definitely one of most unenjoyable because of how tedious it was. </h3>
-    <a href="/content/image/restore2.png"><img width="390px" height="263.1px" src="https://csp25.pages.dev/content/image/restore2.png" alt="Image Restoration Project 2"></a>
+    <a href="/content/image/restore2.png"><img width="390px" height="263.1px" src="/content/image/restore2.png" alt="Image Restoration Project 2"></a>
   </div>
-</body>
