@@ -19,7 +19,7 @@ h3 {
   font-size: 20px;
 }
 
-a {
+.links {
   font-family: "Space Grotesk", sans-serif;
   color: #ffffff;
   text-decoration: none;
@@ -52,12 +52,20 @@ small {
 }
 
 .navbar {
+  display: flex;
+  flex-direction: column;
   border-radius: 20px 0px 0px 20px;
   background: #292F50;
   font-family: "Space Grotesk", sans-serif;
   color: #ffffff;
   width: 250px;
   padding: 20px;
+}
+
+.footer {
+  font-size: 13px;
+  margin-top: auto; /* pushes it to the bottom of navbar */
+  opacity: 0.6;
 }
 
 .content {
@@ -77,4 +85,15 @@ small {
 .container {
   width: 100%;
   max-width: 1000px;
+}
+
+.footer-links {
+  font-family: "Space Grotesk", sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.footer-links:hover {
+  color: #9094ff;
 }
