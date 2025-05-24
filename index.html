@@ -16,37 +16,41 @@
     }
   </style>
   <script>
-    // AJAX function to load content from the /pages/ directory
-    function loadContent(page) {
-      const xhr = new XMLHttpRequest();
-      xhr.onload = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          document.getElementById('content').innerHTML = this.responseText;
-          
-          // Remove active class from all links
-          const links = document.querySelectorAll('.navbar a');
-          links.forEach(link => link.classList.remove('active'));
-          
-          // Add active class to current page link
-          document.getElementById(page).classList.add('active');
-        } else {
-          // Handle errors or missing content
-          document.getElementById('content').innerHTML = `
-            <p>Error loading content. Please check the URL.</p>
-          `;
-        }
-      };
-      // Update the path to point to your /pages/ directory
-      xhr.open('GET', `/pages/${page}.html`, true);
-      xhr.send();
-    }
+  function loadContent(page) {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        document.getElementById('content').innerHTML = this.responseText;
 
-    // Load default content when the page loads
-    window.onload = function() {
-      loadContent('about');
-      // Set initial active state for the default page
-      document.getElementById('about').classList.add('active');
-    }
+        const links = document.querySelectorAll('.navbar a');
+        links.forEach(link => link.classList.remove('active'));
+
+        const activeLink = document.getElementById(page);
+        if (activeLink) activeLink.classList.add('active');
+      } else {
+        document.getElementById('content').innerHTML = `
+          <p>Error loading content. Please check the URL.</p>
+        `;
+      }
+    };
+    xhr.open('GET', `/pages/${page}.html`, true);
+    xhr.send();
+
+    // Update the URL hash without reloading
+    window.location.hash = page;
+  }
+
+  window.onload = function() {
+    // Get the page name from the hash or use 'about' as default
+    const hash = window.location.hash.replace('#', '') || 'about';
+    loadContent(hash);
+  };
+
+  // Optional: Handle back/forward browser navigation
+  window.onhashchange = function() {
+    const page = window.location.hash.replace('#', '') || 'about';
+    loadContent(page);
+  };
   </script>
   </head>
 
