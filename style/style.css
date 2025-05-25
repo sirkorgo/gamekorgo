@@ -69,6 +69,11 @@ small {
   box-sizing: border-box;
 }
 
+.navbar a.active {
+  font-weight: bold;
+}
+
+
 .footer {
   font-size: 13px;
   margin-top: auto; /* pushes it to the bottom of navbar */
