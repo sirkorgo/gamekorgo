@@ -135,10 +135,7 @@ small {
   background: #9094ff;
 }
 
-/* Hover color */
-.menu-button:hover {
-  background: #9094ff;
-}
+
 
 @media (max-width: 768px) {
   .navbar .links br {
