@@ -25,3 +25,4 @@
   <p>personal project, felt like it needed to be added...</p>
   <a href="https://sirkorgo.com"><img style="border-radius: 5px;" width="300" height="300" src="/content/image/srkrgo.png"></a>
 </div>
+</body>
