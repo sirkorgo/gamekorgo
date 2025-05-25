@@ -97,3 +97,87 @@ small {
 .footer-links:hover {
   color: #9094ff;
 }
+
+.menu-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #292F50;
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.menu-button hover {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #9094ff;
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+    .navbar .links br {
+  display: none;
+  }
+ .navbar h1, .navbar h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+  .navbar {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: #292F50;
+    border-radius: 20px;
+    padding: 5px;
+    z-index: 999;
+    text-align: center;
+  }
+
+  .navbar.show {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .main {
+    flex-direction: column;
+    margin: 0 10px;
+  }
+
+  .content {
+    border-radius: 20px;
+    padding: 15px;
+  }
+
+  .links a {
+    display: block;
+    margin: 10px 0;
+  }
+}
