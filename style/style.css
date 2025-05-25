@@ -104,7 +104,7 @@ small, .footer-links {
   background: #9094ff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .navbar .links br {
     display: none;
   }
