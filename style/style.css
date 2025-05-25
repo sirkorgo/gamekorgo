@@ -100,8 +100,10 @@ small, .footer-links {
   color: white;
 }
 
-.menu-button:hover {
+.menu-button.active {
   background: #9094ff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(144, 148, 255, 0.8);
 }
 
 @media (max-width: 950px) {

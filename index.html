@@ -38,9 +38,9 @@
     </div>
   </div>
 
-  <button class="menu-button" aria-label="Toggle menu" onclick="toggleNavbar()">☰</button>
+ <button class="menu-button" onclick="toggleNavbar()" id="menuBtn">☰</button>
 
-  <script>
+<script>
     function loadContent(page) {
       fetch(`/pages/${page}.html`)
         .then(response => {
@@ -60,8 +60,12 @@
     }
 
     function toggleNavbar() {
-      document.getElementById('navbar').classList.toggle('show');
-    }
+  const nav = document.getElementById('navbar');
+  const btn = document.getElementById('menuBtn');
+  nav.classList.toggle('show');
+  btn.classList.toggle('active');
+}
+
 
     window.addEventListener('load', () => {
       const page = window.location.hash.slice(1) || 'about';
