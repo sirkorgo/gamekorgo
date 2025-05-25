@@ -1,70 +1,72 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jake's Portfolio</title>
-  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="/style/style.css" />
 </head>
 <body>
   <div class="container">
     <div class="main">
-      <div class="navbar" id="navbar">
+      <nav class="navbar" id="navbar">
         <h1>Jake's Portfolio</h1>
         <h3>Computer Science 7B 2024-25</h3>
         <div class="links">
-          <a id="about" onclick="loadContent('about')">About</a><br>
-          <a id="graphics" onclick="loadContent('graphics')">Graphic Design</a><br>
-          <a id="photoshop" onclick="loadContent('photoshop')">Photoshop Projects</a><br>
-          <a id="videos" onclick="loadContent('videos')">Videos</a><br>
-          <a id="webdesign" onclick="loadContent('webdesign')">Web Development</a><br>
+          <a id="about" onclick="loadContent('about')">About</a>
+          <a id="graphics" onclick="loadContent('graphics')">Graphic Design</a>
+          <a id="photoshop" onclick="loadContent('photoshop')">Photoshop Projects</a>
+          <a id="videos" onclick="loadContent('videos')">Videos</a>
+          <a id="webdesign" onclick="loadContent('webdesign')">Web Development</a>
           <a id="bts" onclick="loadContent('bts')">Behind the Scenes</a>
         </div>
-        <div class="footer">
-          <small>This site was created for an academic assignment and is being hosted via</small>
-          <a class="footer-links" href="https://edu.sirkorgo.com">edu.sirkorgo.com</a>
-        </div>
-      </div>
+        <footer class="footer">
+          <small>This site was created for an academic assignment and is hosted via
+            <a class="footer-links" href="https://edu.sirkorgo.com" target="_blank" rel="noopener noreferrer">edu.sirkorgo.com</a>
+          </small>
+        </footer>
+      </nav>
 
-      <div class="content" id="content">
+      <main class="content" id="content">
         <!-- Content loads here -->
-      </div>
+      </main>
     </div>
   </div>
 
-  <!-- Floating menu button for mobile -->
-  <button class="menu-button" onclick="toggleNavbar()">☰</button>
+  <button class="menu-button" aria-label="Toggle menu" onclick="toggleNavbar()">☰</button>
 
   <script>
     function loadContent(page) {
-      const xhr = new XMLHttpRequest();
-      xhr.onload = function () {
-        if (this.readyState === 4 && this.status === 200) {
-          document.getElementById('content').innerHTML = this.responseText;
+      fetch(`/pages/${page}.html`)
+        .then(response => {
+          if (!response.ok) throw new Error('Failed to load content');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
           document.querySelectorAll('.navbar a').forEach(link => link.classList.remove('active'));
           const activeLink = document.getElementById(page);
           if (activeLink) activeLink.classList.add('active');
-        }
-      };
-      xhr.open('GET', `/pages/${page}.html`, true);
-      xhr.send();
-      window.location.hash = page;
+          window.location.hash = page;
+        })
+        .catch(() => {
+          document.getElementById('content').innerHTML = '<p>Error loading content. Please try again.</p>';
+        });
     }
 
     function toggleNavbar() {
-      const nav = document.getElementById('navbar');
-      nav.classList.toggle('show');
+      document.getElementById('navbar').classList.toggle('show');
     }
 
-    window.onload = function () {
-      const hash = window.location.hash.replace('#', '') || 'about';
-      loadContent(hash);
-    };
-
-    window.onhashchange = function () {
-      const page = window.location.hash.replace('#', '') || 'about';
+    window.addEventListener('load', () => {
+      const page = window.location.hash.slice(1) || 'about';
       loadContent(page);
-    };
+    });
+
+    window.addEventListener('hashchange', () => {
+      const page = window.location.hash.slice(1) || 'about';
+      loadContent(page);
+    });
   </script>
 </body>
 </html>
